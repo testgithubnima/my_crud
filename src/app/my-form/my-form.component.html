@@ -1,0 +1,16 @@
+<h2>{{ employee.name ? 'Edit Employee' : 'Add Employee' }}</h2>
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+  <div>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" [(ngModel)]="employee.name" required>
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" [(ngModel)]="employee.email" required>
+  </div>
+  <div>
+    <label for="position">Position</label>
+    <input type="text" id="position" name="position" [(ngModel)]="employee.position" required>
+  </div>
+  <button type="submit" [disabled]="employeeForm.invalid">{{ employee.name ? 'Update' : 'Submit' }}</button>
+</form>

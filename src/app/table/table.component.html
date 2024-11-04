@@ -1,0 +1,22 @@
+<h2>Employee List</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Position</th>
+      <th>Actions</th> <!-- New header for action buttons -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees; let i = index">
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.position }}</td>
+      <td>
+        <button (click)="editEmployee(i)">Edit</button> <!-- Edit button -->
+        <button (click)="deleteEmployee(i)">Delete</button> <!-- Delete button -->
+      </td>
+    </tr>
+  </tbody>
+</table>
